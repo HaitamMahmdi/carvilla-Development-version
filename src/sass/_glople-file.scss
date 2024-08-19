@@ -1,0 +1,61 @@
+// <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 300 to 900
+* {
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  outline: none;
+  list-style: none;
+}
+$primary: #1b263b;
+$secondary: #415a77;
+$success: #778da9;
+$color-h: #444a57;
+$color-p: #818998;
+.bg-primary {
+  background-color: $primary !important;
+}
+
+.bg-secondary {
+  background-color: $secondary !important;
+}
+.bg-success {
+  background-color: $success !important;
+}
+
+.Primrybutton {
+  background-color: #4e4ffa !important;
+  color: white !important;
+  padding: 20px !important;
+  transition: 0.3s;
+  border: none;
+  &:hover {
+    background-color: #0000ff !important;
+  }
+}
+.b-prev,
+.b-next {
+  width: 50px !important;
+  height: 200px;
+  top: 50% !important;
+  transform: translateY(-50%);
+  background-color: #4e4ffa !important;
+  &:hover {
+    background-color: #0000ff;
+  }
+}
+
+footer {
+  padding-top: 80px;
+  background-color: #2a2d54;
+  * {
+    list-style: none;
+    text-decoration: none;
+  }
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}

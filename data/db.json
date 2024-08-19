@@ -1,0 +1,209 @@
+{
+  "companies": [
+    {
+      "company": "Toyota",
+      "brandLogo": "br1",
+      "cars": [
+        {
+          "name": "Corolla",
+          "model": "Sedan",
+          "year": 2023,
+          "condition": "New",
+          "price": 25000,
+          "modleImg": "fc5",
+          "description": "The Toyota Corolla is a compact car offering excellent fuel efficiency and a comfortable ride. Its sleek design and advanced technology make it a popular choice among commuters and families alike."
+        },
+        {
+          "name": "RAV4",
+          "model": "SUV",
+          "year": 2022,
+          "condition": "Used",
+          "price": 28000,
+          "modleImg": "fc6",
+          "description": "The Toyota RAV4 is a versatile SUV with a spacious interior and robust off-road capabilities. It provides a smooth driving experience and ample cargo space, ideal for families and outdoor enthusiasts."
+        },
+        {
+          "name": "Camry",
+          "model": "Sedan",
+          "year": 2023,
+          "condition": "New",
+          "price": 27000,
+          "modleImg": "fc2",
+          "description": "The Toyota Camry combines luxury with practicality. Its refined interior and cutting-edge features offer a comfortable and engaging driving experience. A great option for those seeking a reliable sedan."
+        },
+        {
+          "name": "Highlander",
+          "model": "SUV",
+          "year": 2021,
+          "condition": "Used",
+          "price": 35000,
+          "modleImg": "fc1",
+          "description": "The Toyota Highlander provides ample room for up to eight passengers and features a high-quality interior with advanced technology. It is perfect for family road trips and daily driving needs."
+        }
+      ]
+    },
+    {
+      "company": "Ford",
+      "brandLogo": "br2",
+      "cars": [
+        {
+          "name": "Mustang",
+          "model": "Coupe",
+          "year": 2023,
+          "condition": "New",
+          "price": 55000,
+          "modleImg": "fc2",
+          "description": "The Ford Mustang is an iconic sports car known for its powerful engine and aggressive styling. It delivers thrilling performance and a dynamic driving experience, appealing to car enthusiasts everywhere."
+        },
+        {
+          "name": "F-150",
+          "model": "Pickup",
+          "year": 2021,
+          "condition": "Used",
+          "price": 40000,
+          "modleImg": "fc3",
+          "description": "The Ford F-150 is a reliable and rugged pickup truck with impressive towing capacity and off-road performance. It offers a comfortable interior and advanced features for work and leisure activities."
+        },
+        {
+          "name": "Explorer",
+          "model": "SUV",
+          "year": 2023,
+          "condition": "New",
+          "price": 45000,
+          "modleImg": "fc4",
+          "description": "The Ford Explorer is a spacious SUV with modern technology and a smooth ride. It features a high-quality cabin and advanced safety systems, making it a great choice for families and adventurers."
+        },
+        {
+          "name": "Escape",
+          "model": "SUV",
+          "year": 2022,
+          "condition": "Used",
+          "price": 32000,
+          "modleImg": "fc5",
+          "description": "The Ford Escape is a compact SUV with a comfortable interior and efficient engine options. It’s designed for city driving and offers advanced safety features and technology."
+        }
+      ]
+    },
+    {
+      "company": "BMW",
+      "brandLogo": "br3",
+
+      "cars": [
+        {
+          "name": "3 Series",
+          "model": "Sedan",
+          "year": 2022,
+          "condition": "New",
+          "price": 45000,
+          "modleImg": "fc5",
+          "description": "The BMW 3 Series offers a blend of luxury, performance, and cutting-edge technology. It is designed to provide an exhilarating driving experience with a sophisticated interior and advanced features."
+        },
+        {
+          "name": "X5",
+          "model": "SUV",
+          "year": 2020,
+          "condition": "Used",
+          "price": 50000,
+          "modleImg": "fc6",
+          "description": "The BMW X5 combines luxury with performance, featuring a powerful engine and a high-end interior. It offers a smooth ride, advanced technology, and ample cargo space for a premium driving experience."
+        },
+        {
+          "name": "5 Series",
+          "model": "Sedan",
+          "year": 2023,
+          "condition": "New",
+          "price": 55000,
+          "modleImg": "fc7",
+          "description": "The BMW 5 Series is a luxury sedan with powerful engine options and cutting-edge technology. It’s designed for those who demand both performance and comfort in their vehicle."
+        },
+        {
+          "name": "X3",
+          "model": "SUV",
+          "year": 2021,
+          "condition": "Used",
+          "price": 42000,
+          "modleImg": "fc8",
+          "description": "The BMW X3 is a compact luxury SUV with a sporty design and agile handling. It offers a premium interior with advanced features, ideal for city driving and weekend getaways."
+        }
+      ]
+    },
+    {
+      "company": "Tesla",
+      "brandLogo": "br4",
+
+      "cars": [
+        {
+          "name": "Model S",
+          "model": "Sedan",
+          "year": 2023,
+          "condition": "New",
+          "price": 80000,
+          "modleImg": "fc7",
+          "description": "The Tesla Model S is a high-performance electric sedan with cutting-edge technology and an impressive range. Its sleek design and advanced features make it a leader in the electric vehicle market."
+        },
+        {
+          "name": "Model 3",
+          "model": "Sedan",
+          "year": 2021,
+          "condition": "Used",
+          "price": 35000,
+          "modleImg": "fc8",
+          "description": "The Tesla Model 3 offers an affordable entry into electric driving with exceptional range and performance. Its modern design and high-tech features provide a thrilling and efficient driving experience."
+        },
+        {
+          "name": "Model X",
+          "model": "SUV",
+          "year": 2022,
+          "condition": "New",
+          "price": 90000,
+          "modleImg": "fc2",
+          "description": "The Tesla Model X is a luxury electric SUV with Falcon Wing doors, advanced autopilot capabilities, and a spacious interior. It offers incredible acceleration and long-range driving, ideal for tech-savvy families."
+        },
+        {
+          "name": "Model Y",
+          "model": "SUV",
+          "year": 2023,
+          "condition": "New",
+          "price": 60000,
+          "modleImg": "fc1",
+          "description": "The Tesla Model Y is a compact electric SUV with impressive range, modern design, and advanced features. It’s perfect for those looking for an eco-friendly vehicle with plenty of space and comfort."
+        }
+      ]
+    }
+  ],
+  "latest_cars": [
+    {
+      "company": "Toyota",
+      "name": "Camry",
+      "model": "Sedan",
+      "year": 2023,
+      "condition": "New",
+      "price": 27000,
+      "description": "The Toyota Camry combines luxury with practicality. Its refined interior and cutting-edge features offer a comfortable and engaging driving experience. A great option for those seeking a reliable sedan.",
+      "modleImg": "ncm1",
+      "latest": true
+    },
+    {
+      "company": "Ford",
+      "name": "Explorer",
+      "model": "SUV",
+      "year": 2023,
+      "condition": "New",
+      "price": 45000,
+      "modleImg": "ncm2",
+      "latest": false,
+      "description": "The Ford Explorer is a spacious SUV with modern technology and a smooth ride. It features a high-quality cabin and advanced safety systems, making it a great choice for families and adventurers."
+    },
+    {
+      "company": "Tesla",
+      "name": "Model S",
+      "model": "Sedan",
+      "year": 2023,
+      "condition": "New",
+      "price": 80000,
+      "latest": false,
+      "modleImg": "ncm3",
+      "description": "The Tesla Model S is a high-performance electric sedan with cutting-edge technology and an impressive range. Its sleek design and advanced features make it a leader in the electric vehicle market."
+    }
+  ]
+}

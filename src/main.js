@@ -1,0 +1,12 @@
+import { createApp } from "vue";
+import App from "./App.vue";
+import router from "./router";
+import store from "./store";
+import "normalize.css";
+import "bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap-icons/font/bootstrap-icons.css";
+import "./sass/_glople-file.scss";
+//import "bootstrap/dist/js/bootstrap.bundle";
+//import "./sass/_custom.scss";
+createApp(App).use(store).use(router).mount("#app");
