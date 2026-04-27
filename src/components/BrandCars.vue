@@ -1,7 +1,7 @@
 <template>
   <ul class="rwow">
-    <li class="col" v-for="brand in data" :key="brand">
-      <img :src="getImg(brand.brandLogo)" alt="" />
+    <li class="col" v-for="(brand, index) in data" :key="brand">
+      <img :src="`/assets/images/brand/br${index + 1}.png`" alt="" />
     </li>
   </ul>
 </template>
@@ -16,11 +16,8 @@ export default {
       let datafteh = await fetch("http://localhost:3000/companies");
       return (data.value = await datafteh.json());
     }
-    getdata();
-    function getImg(imgName) {
-      return require(`../assets/images/brand/${imgName}.png`);
-    }
-    return { getdata, data, getImg };
+    getdata()
+    return { getdata, data };
   },
 };
 </script>
@@ -32,6 +29,7 @@ ul {
   margin: auto;
   flex-wrap: wrap;
   justify-content: center;
+
   li {
     padding: 40px 15px;
   }

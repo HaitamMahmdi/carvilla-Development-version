@@ -1,21 +1,12 @@
 <template>
-  <form @click.prevent action="">
+  <form @click.prevent v-if="data" action="">
     <input v-model="ser" type="search" name="" id="" />
     <input @click="sers()" type="button" value="Search" />
   </form>
   <div class="car-continer row gap-3 justify-content-center">
-    <div
-      v-show="car.cars[0].name.includes(sers())"
-      v-for="car in data"
-      :key="car.company"
-      class="card col-3 p-4"
-      style="width: 18rem"
-    >
-      <img
-        :src="getImageUrl(car.cars[0].modleImg)"
-        class="card-img-top"
-        alt="..."
-      />
+    <div v-show="car.cars[0].name.includes(sers())" v-for="car in data" :key="car.company" class="card col-3 p-4"
+      style="width: 18rem">
+      <img :src="`/assets/images/featured-cars/${car.cars[0].modleImg}.png`" class="card-img-top" alt="..." />
       <div class="card-body">
         <h5 class="card-title">{{ car.cars[0].name }}</h5>
         <p class="card-text">
@@ -34,24 +25,13 @@
         </li>
       </ul>
       <div class="card-body">
-        <a href="#" class="card-link"
-          >Reed More <i class="first bi bi-caret-right-fill"></i
-          ><i class="secnd bi bi-caret-right-fill"></i
-        ></a>
+        <a href="#" class="card-link">Reed More <i class="first bi bi-caret-right-fill"></i><i
+            class="secnd bi bi-caret-right-fill"></i></a>
       </div>
     </div>
-    <div
-      v-for="car in data"
-      :key="car.company"
-      class="card col-3 p-4"
-      style="width: 18rem"
-      v-show="car.cars[1].name.includes(sers())"
-    >
-      <img
-        :src="getImageUrl(car.cars[1].modleImg)"
-        class="card-img-top"
-        alt="..."
-      />
+    <div v-for="car in data" :key="car.company" class="card col-3 p-4" style="width: 18rem"
+      v-show="car.cars[1].name.includes(sers())">
+      <img :src="`/assets/images/featured-cars/${car.cars[1].modleImg}.png`" class="card-img-top" alt="..." />
       <div class="card-body">
         <h5 class="card-title">{{ car.cars[1].name }}</h5>
         <p class="card-text">
@@ -70,24 +50,13 @@
         </li>
       </ul>
       <div class="card-body">
-        <a href="#" class="card-link"
-          >Reed More <i class="first bi bi-caret-right-fill"></i
-          ><i class="secnd bi bi-caret-right-fill"></i
-        ></a>
+        <a href="#" class="card-link">Reed More <i class="first bi bi-caret-right-fill"></i><i
+            class="secnd bi bi-caret-right-fill"></i></a>
       </div>
     </div>
-    <div
-      v-for="car in data"
-      :key="car.company"
-      class="card col-3 p-4"
-      style="width: 18rem"
-      v-show="car.cars[2].name.includes(sers())"
-    >
-      <img
-        :src="getImageUrl(car.cars[2].modleImg)"
-        class="card-img-top"
-        alt="..."
-      />
+    <div v-for="car in data" :key="car.company" class="card col-3 p-4" style="width: 18rem"
+      v-show="car.cars[2].name.includes(sers())">
+      <img :src="`/assets/images/featured-cars/${car.cars[3].modleImg}.png`" class="card-img-top" alt="..." />
       <div class="card-body">
         <h5 class="card-title">{{ car.cars[2].name }}</h5>
         <p class="card-text">
@@ -106,24 +75,13 @@
         </li>
       </ul>
       <div class="card-body">
-        <a href="#" class="card-link"
-          >Reed More <i class="first bi bi-caret-right-fill"></i
-          ><i class="secnd bi bi-caret-right-fill"></i
-        ></a>
+        <a href="#" class="card-link">Reed More <i class="first bi bi-caret-right-fill"></i><i
+            class="secnd bi bi-caret-right-fill"></i></a>
       </div>
     </div>
-    <div
-      v-for="car in data"
-      :key="car.company"
-      class="card col-3 p-4"
-      style="width: 18rem"
-      v-show="car.cars[3].name.includes(sers())"
-    >
-      <img
-        :src="getImageUrl(car.cars[3].modleImg)"
-        class="card-img-top"
-        alt="..."
-      />
+    <div v-for="car in data" :key="car.company" class="card col-3 p-4" style="width: 18rem"
+      v-show="car.cars[3].name.includes(sers())">
+      <img :src="`/assets/images/featured-cars/${car.cars[3].modleImg}.png`" class="card-img-top" alt="..." />
       <div class="card-body">
         <h5 class="card-title">{{ car.cars[3].name }}</h5>
         <p class="card-text">
@@ -142,10 +100,8 @@
         </li>
       </ul>
       <div class="card-body">
-        <a href="#" class="card-link"
-          >Reed More <i class="first bi bi-caret-right-fill"></i
-          ><i class="secnd bi bi-caret-right-fill"></i
-        ></a>
+        <a href="#" class="card-link">Reed More <i class="first bi bi-caret-right-fill"></i><i
+            class="secnd bi bi-caret-right-fill"></i></a>
       </div>
     </div>
   </div>
@@ -163,22 +119,17 @@ export default {
       try {
         data.value = await dataFetch.json();
       } catch {
-        throw new Error("NO DATA FOUNDE");
+        console.error("No data found");
+        return;
       }
     }
     getData();
     function sers() {
       return ser.value;
     }
-    const getImageUrl = (imageName) => {
-      if (typeof imageName === "string") {
-        return require(`../assets/images/featured-cars/${imageName}.png`);
-      } else {
-        return `NO IMG FOND`;
-      }
-    };
 
-    return { ser, data, getImageUrl, sers };
+
+    return { ser, data, sers };
   },
 };
 </script>
@@ -187,20 +138,24 @@ export default {
 form {
   width: fit-content;
   margin: 40px auto;
+
   [type="search"],
   [type="button"] {
     border: 1px solid #ddd;
     padding: 15px;
     font-size: 18px;
   }
+
   [type="search"] {
     color: #4e4ffa;
   }
+
   [type="button"] {
     background-color: #4e4ffa;
     color: white;
   }
 }
+
 .car-continer {
   .card {
     cursor: pointer;
@@ -211,9 +166,11 @@ form {
     li {
       transition: 0.3s;
     }
+
     a {
       padding: 10px 5px;
       text-decoration: none;
+
       i.first,
       i.secnd {
         color: #4e4efa93;
@@ -226,11 +183,14 @@ form {
         animation-delay: 0.1s;
       }
     }
+
     &:hover {
       top: -10px;
       background-color: #4e4ffa;
+
       ul {
         border-color: white;
+
         li {
           background-color: #4e4ffa;
         }
@@ -241,6 +201,7 @@ form {
       a {
         color: white;
       }
+
       a {
         i {
           animation-name: arrow;
@@ -249,10 +210,12 @@ form {
     }
   }
 }
+
 @keyframes arrow {
   from {
     color: #4e4efa93;
   }
+
   to {
     color: white;
   }

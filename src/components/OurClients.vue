@@ -36,6 +36,7 @@ export default {};
 
 <style lang="scss" scoped>
 @use "../../node_modules/bootstrap/scss/bootstrap" as *;
+
 .cont {
   display: flex;
   margin-top: 150px;
@@ -52,15 +53,19 @@ export default {};
     background-repeat: no-repeat;
 
     cursor: pointer;
+
     &.div1 {
-      background-image: url("../assets/images/clients/c4 (1).jpg");
+      background-image: url("/assets/images/clients/c4 (1).jpg");
     }
+
     &.div2 {
-      background-image: url("../assets/images/clients/c5.jpg");
+      background-image: url("/assets/images/clients/c5.jpg");
     }
+
     &.div3 {
-      background-image: url("../assets/images/clients/c6.jpg");
+      background-image: url("/assets/images/clients/c6.jpg");
     }
+
     &::before {
       content: "";
       position: absolute;
@@ -72,6 +77,7 @@ export default {};
 
       left: 0;
     }
+
     div.text {
       color: white;
       position: absolute;
@@ -85,19 +91,23 @@ export default {};
       text-align: center;
       padding: 0px 20px;
     }
+
     &:hover {
       &::before {
         background-color: #4e4eface;
       }
+
       div.text {
         opacity: 1;
       }
     }
   }
+
   @include media-breakpoint-down("lg") {
     & {
       flex-wrap: wrap;
       justify-content: center;
+
       div.div1,
       .div2,
       .div3 {

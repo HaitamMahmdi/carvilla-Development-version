@@ -1,6 +1,7 @@
 <template>
   <main class="main">
-    <section class="landing">
+    <section class="landing position-relative">
+      <img class=" absloute w-100 h-100 z-1" src="/assets/images/welcome-hero/welcome-banner.jpg" alt="">
       <Home-component>
         <template #tital>
           <h1 class="fs-1">get your desired car in resonable price</h1>
@@ -15,8 +16,7 @@
         <template #button>
           <button type="button" class="btn Primrybutton">
             Counct US
-          </button></template
-        >
+          </button></template>
       </Home-component>
       <span></span>
       <Sech-for-cars-vue />
@@ -73,17 +73,11 @@
         </div>
       </section>
       <section class="newStCars">
-        <Sections-tital-vue
-          sectionDesc="checkout the latest cars"
-          sectionTital="newest cars"
-        />
+        <Sections-tital-vue sectionDesc="checkout the latest cars" sectionTital="newest cars" />
         <Newest-cars-vue />
       </section>
       <section class="featured-cars">
-        <Sections-tital-vue
-          sectionDesc="checkout the featured cars"
-          sectionTital="featured cars"
-        />
+        <Sections-tital-vue sectionDesc="checkout the featured cars" sectionTital="featured cars" />
         <Featured-cars-vue />
       </section>
 
@@ -127,12 +121,12 @@ export default {
 @use "../../node_modules/bootstrap/scss/bootstrap.scss" as *;
 
 section.landing {
-  background-image: url("../assets/images/welcome-hero/welcome-banner.jpg");
   background-position: center;
   height: 120vh;
   z-index: 0;
   position: relative;
   background-repeat: no-repeat;
+
   span {
     display: block;
     position: absolute;
@@ -143,30 +137,37 @@ section.landing {
     width: 100%;
     height: 100%;
   }
+
   div.textF1 {
-    position: relative;
+    position: absolute;
+    width: 100%;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translate(-50%, -50%);
     z-index: 2;
+    left: 50%;
     margin: auto;
     text-align: center;
     color: white;
+
     h1 {
       margin-bottom: 50px;
       text-transform: uppercase;
       font-weight: bold;
       padding: 0 20px;
     }
+
     p {
       width: 50%;
       margin: auto;
       margin-bottom: 25px;
     }
+
     button {
       width: 250px;
       border-radius: 0;
     }
   }
+
   @include media-breakpoint-up("xxl") {
     & {
       max-width: 1920px;
@@ -180,8 +181,10 @@ section.landing {
     & {
       height: 165vh;
       background-size: cover;
+
       div.textF1 {
         top: 30%;
+
         p {
           width: 100%;
           padding: 0 5px;
@@ -190,6 +193,7 @@ section.landing {
     }
   }
 }
+
 section.service {
   padding: 250px 0px;
   flex-wrap: wrap;
@@ -200,25 +204,31 @@ section.service {
     }
   }
 }
+
 section.newStCars {
   padding-top: 120px;
   padding-bottom: 90px;
   background-color: #f8f9fb;
+
   .tital {
     margin-bottom: 80px;
   }
 }
+
 section.featured-cars {
   padding-top: 120px;
   padding-bottom: 120px;
 }
+
 section.brand {
   padding-top: 120px;
   padding-bottom: 120px;
 }
+
 footer {
   padding-top: 80px;
   background-color: #2a2d54;
+
   * {
     list-style: none;
     text-decoration: none;
