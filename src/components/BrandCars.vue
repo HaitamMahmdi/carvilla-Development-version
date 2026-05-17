@@ -1,7 +1,7 @@
 <template>
   <ul class="rwow">
     <li class="col" v-for="(brand, index) in data" :key="brand">
-      <img :src="`/assets/images/brand/br${index + 1}.png`" alt="" />
+      <img :src="`/assets/images/brand/br${index + 1}.webp`" alt="" />
     </li>
   </ul>
 </template>

@@ -12,7 +12,7 @@
       <div v-for="(car, index) in companys" :key="car" :class="{ active: car.latest }" class="carousel-item">
         <div class="box item">
           <div>
-            <img :src="`/assets/images/new-cars-model/ncm${index + 1}.png`" alt="" />
+            <img :src="`/assets/images/new-cars-model/ncm${index + 1}.webp`" alt="" />
           </div>
           <ul class="carDitals">
             <li>
