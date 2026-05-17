@@ -1,3 +1,15 @@
+<script>
+import { useCarStore } from '@/store/carsStore';
+export default {
+  setup() {
+    const carSore = useCarStore()
+    const newestCars = carSore.getNewestCar
+    console.log(newestCars)
+    return { newestCars };
+  },
+};
+</script>
+
 <template>
   <div id="carouselExampleIndicators" class="carousel slide se" data-bs-ride="carousel" data-bs-interval="3000">
     <div id="indicators" class="carousel-indicators">
@@ -9,10 +21,10 @@
         aria-label="Slide 3"></button>
     </div>
     <div ref="carousel" class="carousel-inner">
-      <div v-for="(car, index) in companys" :key="car" :class="{ active: car.latest }" class="carousel-item">
+      <div v-for="(car, index) in newestCars" :key="car" :class="{ active: index === 0 }" class="carousel-item  ">
         <div class="box item">
           <div>
-            <img :src="`/assets/images/new-cars-model/ncm${index + 1}.webp`" alt="" />
+            <img :src="`/assets/images/new-cars-model/${car.modelImage}.webp`" alt="" />
           </div>
           <ul class="carDitals">
             <li>
@@ -20,25 +32,23 @@
                 <strong>company:</strong>{{ car.company }}
               </h3>
               <ul>
+
                 <li>
-                  <p class="aDital"><strong>name:</strong>{{ car.name }}</p>
+                  <p><strong>model: </strong>{{ car.modelName }}</p>
                 </li>
                 <li>
-                  <p class="aDital"><strong>model: </strong>{{ car.model }}</p>
+                  <p><strong>year:</strong> {{ car.year }}</p>
                 </li>
                 <li>
-                  <p class="aDital"><strong>year:</strong> {{ car.year }}</p>
-                </li>
-                <li>
-                  <p class="aDital">
+                  <p>
                     <strong>condition:</strong>{{ car.condition }}
                   </p>
                 </li>
                 <li>
-                  <p class="aDital"><strong>price: </strong>{{ car.price }}$</p>
+                  <p><strong>price: </strong>{{ car.price }}$</p>
                 </li>
                 <li>
-                  <p class="aDital">
+                  <p>
                     <strong>description: </strong>{{ car.description }}
                   </p>
                 </li>
@@ -61,27 +71,6 @@
   </div>
 </template>
 
-<script>
-import { ref } from "vue";
-
-export default {
-  props: ["imgUrl", "tital", "description"],
-  setup() {
-    const companys = ref([]);
-    const farchdata = async () => {
-      let o = await fetch("http://localhost:3000/latest_cars");
-      try {
-        companys.value = await o.json();
-      } catch (err) {
-        throw Error(`sdsdsdsdsd`);
-      }
-    };
-    farchdata();
-
-    return { companys };
-  },
-};
-</script>
 
 <style lang="scss" scoped>
 @use "../../node_modules/bootstrap/scss/bootstrap" as *;

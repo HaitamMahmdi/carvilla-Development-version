@@ -1,27 +1,26 @@
 <template>
-  <form @click.prevent v-if="data" action="">
-    <input v-model="ser" type="search" name="" id="" />
-    <input @click="sers()" type="button" value="Search" />
+  <form @click.prevent v-if="featuredCars" action="">
+    <input type="search" name="" id="" />
+    <input type="button" value="Search" />
   </form>
   <div class="car-continer row gap-3 justify-content-center">
-    <div v-show="car.cars[0].name.includes(sers())" v-for="car in data" :key="car.company" class="card col-3 p-4"
-      style="width: 18rem">
-      <img :src="`/assets/images/featured-cars/${car.cars[0].modleImg}.png`" class="card-img-top" alt="..." />
+    <div v-for="car in featuredCars" :key="car" class="card col-3 p-4" style="width: 18rem">
+      <img :src="`/assets/images/featured-cars/${car.modelImage}.webp`" class="card-img-top" alt="..." />
       <div class="card-body">
-        <h5 class="card-title">{{ car.cars[0].name }}</h5>
+        <h5 class="card-title">{{ car.name }}</h5>
         <p class="card-text">
           <strong>{{ car.company }}</strong>
         </p>
       </div>
       <ul class="list-group list-group-flush">
         <li class="list-group-item">
-          <p><strong>model</strong>:{{ car.cars[0].model }}</p>
+          <p><strong>model</strong>:{{ car.modelName }}</p>
         </li>
         <li class="list-group-item">
-          <p><strong>year</strong>:{{ car.cars[0].year }}</p>
+          <p><strong>year</strong>:{{ car.year }}</p>
         </li>
         <li class="list-group-item">
-          <p><strong>condition</strong>:{{ car.cars[0].condition }}</p>
+          <p><strong>condition</strong>:{{ car.condition }}</p>
         </li>
       </ul>
       <div class="card-body">
@@ -29,107 +28,18 @@
             class="secnd bi bi-caret-right-fill"></i></a>
       </div>
     </div>
-    <div v-for="car in data" :key="car.company" class="card col-3 p-4" style="width: 18rem"
-      v-show="car.cars[1].name.includes(sers())">
-      <img :src="`/assets/images/featured-cars/${car.cars[1].modleImg}.png`" class="card-img-top" alt="..." />
-      <div class="card-body">
-        <h5 class="card-title">{{ car.cars[1].name }}</h5>
-        <p class="card-text">
-          <strong>{{ car.company }}</strong>
-        </p>
-      </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">
-          <p><strong>model</strong>:{{ car.cars[1].model }}</p>
-        </li>
-        <li class="list-group-item">
-          <p><strong>year</strong>:{{ car.cars[1].year }}</p>
-        </li>
-        <li class="list-group-item">
-          <p><strong>condition</strong>:{{ car.cars[1].condition }}</p>
-        </li>
-      </ul>
-      <div class="card-body">
-        <a href="#" class="card-link">Reed More <i class="first bi bi-caret-right-fill"></i><i
-            class="secnd bi bi-caret-right-fill"></i></a>
-      </div>
-    </div>
-    <div v-for="car in data" :key="car.company" class="card col-3 p-4" style="width: 18rem"
-      v-show="car.cars[2].name.includes(sers())">
-      <img :src="`/assets/images/featured-cars/${car.cars[3].modleImg}.png`" class="card-img-top" alt="..." />
-      <div class="card-body">
-        <h5 class="card-title">{{ car.cars[2].name }}</h5>
-        <p class="card-text">
-          <strong>{{ car.company }}</strong>
-        </p>
-      </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">
-          <p><strong>model</strong>:{{ car.cars[2].model }}</p>
-        </li>
-        <li class="list-group-item">
-          <p><strong>year</strong>:{{ car.cars[2].year }}</p>
-        </li>
-        <li class="list-group-item">
-          <p><strong>condition</strong>:{{ car.cars[2].condition }}</p>
-        </li>
-      </ul>
-      <div class="card-body">
-        <a href="#" class="card-link">Reed More <i class="first bi bi-caret-right-fill"></i><i
-            class="secnd bi bi-caret-right-fill"></i></a>
-      </div>
-    </div>
-    <div v-for="car in data" :key="car.company" class="card col-3 p-4" style="width: 18rem"
-      v-show="car.cars[3].name.includes(sers())">
-      <img :src="`/assets/images/featured-cars/${car.cars[3].modleImg}.png`" class="card-img-top" alt="..." />
-      <div class="card-body">
-        <h5 class="card-title">{{ car.cars[3].name }}</h5>
-        <p class="card-text">
-          <strong>{{ car.company }}</strong>
-        </p>
-      </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">
-          <p><strong>model</strong>:{{ car.cars[3].model }}</p>
-        </li>
-        <li class="list-group-item">
-          <p><strong>year</strong>:{{ car.cars[3].year }}</p>
-        </li>
-        <li class="list-group-item">
-          <p><strong>condition</strong>:{{ car.cars[3].condition }}</p>
-        </li>
-      </ul>
-      <div class="card-body">
-        <a href="#" class="card-link">Reed More <i class="first bi bi-caret-right-fill"></i><i
-            class="secnd bi bi-caret-right-fill"></i></a>
-      </div>
-    </div>
+
+
   </div>
 </template>
 
 <script>
-import { ref } from "vue";
+import { useCarStore } from "@/store/carsStore";
 export default {
   setup() {
-    const data = ref([]);
-
-    const ser = ref("");
-    async function getData() {
-      let dataFetch = await fetch(`http://localhost:3000/companies`);
-      try {
-        data.value = await dataFetch.json();
-      } catch {
-        console.error("No data found");
-        return;
-      }
-    }
-    getData();
-    function sers() {
-      return ser.value;
-    }
-
-
-    return { ser, data, sers };
+    const cars = useCarStore()
+    const featuredCars = cars.getFeaturedCars
+    return { featuredCars }
   },
 };
 </script>

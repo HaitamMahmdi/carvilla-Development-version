@@ -9,7 +9,7 @@ export const useCarStore = defineStore("carStore", {
         modelName: "BMW X1",
         year: 2009,
         newestCar: false,
-        modelImage: "fc1",
+        modelImage: "BMWX1",
         condition: "New",
         price: 25000,
         description: `The BMW X1 is a premium subcompact luxury crossover
@@ -158,7 +158,9 @@ export const useCarStore = defineStore("carStore", {
     ],
   }),
   getters: {
-    getNewestCar: (state) => state.cars.find((car) => car.newestCar),
+    getNewestCar: (state) => state.cars.filter((car) => car.newestCar === true),
+    getFeaturedCars: (state) =>
+      state.cars.filter((car) => car.newestCar === false),
   },
   actions: {
     searchCars(modelName) {
